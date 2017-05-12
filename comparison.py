@@ -18,10 +18,21 @@ def compare(lst1, lst2):
     """Takes in two lists and returns a list of items in common. """
 
     # Write your code below.
+    file_1_open = open(lst1)
+    file_1_read = file_1_open.read()
+    file_1_list = file_1_read.split("\n")
+    file_2_open = open(lst2)
+    file_2_read = file_2_open.read()
+    file_2_list = file_2_read.split("\n")
+    fruits_in_common = []
+    for fruit in file_1_list:
+        if fruit in file_2_list:
+            fruits_in_common.append(fruit)
 
-
-    pass
+    return fruits_in_common
 
 
 # Call your functions at the bottom, after they've been defined.
-open_and_read_file(raw_input("File name: "))
+#open_and_read_file(raw_input("File name: "))
+compare("fruits_1.txt", "fruits_2.txt")
+print compare("fruits_1.txt", "fruits_2.txt")
